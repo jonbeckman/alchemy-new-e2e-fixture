@@ -1,0 +1,4 @@
+node_modules/
+.alchemy/
+deployment-marker.json
+.env*

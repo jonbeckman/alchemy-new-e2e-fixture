@@ -1,0 +1,41 @@
+{
+  "$schema": "https://alchemy.new/schema/v1/project.json",
+  "schemaVersion": 1,
+  "id": "alchemy-new-e2e-fixture",
+  "name": "Alchemy disposable E2E fixture",
+  "description": "An isolated Alchemy Command.Exec resource that writes a marker inside its deployment Sandbox. Creates no external infrastructure.",
+  "publisher": {
+    "name": "jonbeckman",
+    "github": "jonbeckman",
+  },
+  "source": {
+    "kind": "github-release",
+    "repository": "jonbeckman/alchemy-new-e2e-fixture",
+  },
+  "deployment": {
+    "entrypoint": "alchemy.run.ts",
+    "packageManager": "nub",
+    "providers": ["cloudflare"],
+    "defaultProvider": "cloudflare",
+    "defaultStage": "e2e-disposable",
+  },
+  "parameters": [
+    {
+      "name": "E2E_FAIL",
+      "label": "Intentional fixture failure",
+      "required": false,
+      "secret": false,
+      "type": "boolean",
+      "default": false,
+    },
+    {
+      "name": "E2E_ADMIN_PASSWORD",
+      "label": "Disposable administrator password",
+      "required": true,
+      "secret": true,
+      "type": "string",
+      "generate": "password",
+    },
+  ],
+  "tags": ["e2e", "disposable"],
+}

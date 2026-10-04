@@ -1,0 +1,22 @@
+{
+  "name": "@alchemy-new/e2e-disposable-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@effect/platform-node": "4.0.0-beta.107",
+    "alchemy": "2.0.0-beta.72",
+    "effect": "4.0.0-beta.107"
+  },
+  "overrides": {
+    "@effect/platform-node-shared": "4.0.0-beta.107"
+  },
+  "engines": {
+    "node": ">=24.15.0 <25"
+  },
+  "packageManager": "nub@0.4.11",
+  "allowBuilds": {
+    "esbuild": true,
+    "workerd": true
+  }
+}
